@@ -1,0 +1,45 @@
+CREATE TABLE actors (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER,
+    nationality TEXT);
+
+INSERT INTO actors (fullname, age, nationality) VALUES ("Jason Statham", 55, "United Kingdom");
+INSERT INTO actors (fullname, age, nationality) VALUES ("Jennifer Aniston", 54, "America");
+INSERT INTO actors (fullname, age, nationality) VALUES ("Keanu Reeves", 58, "Canada");
+INSERT INTO actors (fullname, age, nationality) VALUES ("Tom Cruise", 60, "USA");
+INSERT INTO actors (fullname, age, nationality) VALUES ("Bruce Willis", 68, "USA");
+INSERT INTO actors (fullname, age, nationality) VALUES ("Tiffany Haddish", 43, "USA");
+INSERT INTO actors (fullname, age, nationality) VALUES ("Gal Gadot-Varsano", 38, "Israel");
+INSERT INTO actors (fullname, age, nationality) VALUES ("Jackie Chan", 69, "Hong Kong");
+INSERT INTO actors (fullname, age, nationality) VALUES ("Mark Wahlberg", 51, "USA");
+INSERT INTO actors (fullname, age, nationality) VALUES ("Mark Sinclair", 55, "USA");
+INSERT INTO actors (fullname, age, nationality) VALUES ("Dwayne Johnson", 51, "USA");
+
+CREATE TABLE movies (
+ id INTEGER PRIMARY KEY AUTOINCREMENT,
+ actor_id INTEGER,
+ title TEXT,
+ Genre TEXT);
+ 
+INSERT INTO movies (actor_id, title, genre) VALUES (1, "The Transporter", "Action/Thriller");
+INSERT INTO movies (actor_id, title, genre) VALUES (1, "Hobbs & Shaw", "Action/Comedy");
+INSERT INTO movies (actor_id, title, genre) VALUES (7, "Wonder Woman", "Action/Adventure");
+INSERT INTO movies (actor_id, title, genre) VALUES (7, "Fast & Furious 4", "Action/Thriller");
+INSERT INTO movies (actor_id, title, genre) VALUES (2, "Just go with it", "Romance/Comedy");
+INSERT INTO movies (actor_id, title, genre) VALUES (6, "Girls Trip", "Comedy/Road");
+INSERT INTO movies (actor_id, title, genre) VALUES (3, "John Wick", "Action/Thriller");
+INSERT INTO movies (actor_id, title, genre) VALUES (3, "The Matrix", "Sci-fi/Action");
+INSERT INTO movies (actor_id, title, genre) VALUES (4, "The Mummy", "Action/Adventure");
+INSERT INTO movies (actor_id, title, genre) VALUES (5, "Red", "Action/Comedy");
+INSERT INTO movies (actor_id, title, genre) VALUES (8, "Rush Hour", "Action/Comedy");
+INSERT INTO movies (actor_id, title, genre) VALUES (8, "Kung Fu Panda", "Action/Comedy");
+INSERT INTO movies (actor_id, title, genre) VALUES (9, "Shooter", "Action/Thriller");
+INSERT INTO movies (actor_id, title, genre) VALUES (9, "Ted", "Comedy/Fantasy");
+INSERT INTO movies (actor_id, title, genre) VALUES (10, "Fast & Furious 4", "Action/Thriller");
+INSERT INTO movies (actor_id, title, genre) VALUES (11, "Hobbs & Shaw", "Action/Comedy");
+INSERT INTO movies (actor_id, title, genre) VALUES (11, "Black Adam", "Action/Adventure");
+SELECT actors.fullname, movies.title
+FROM actors
+JOIN movies
+ON actors.id = movies.actor_id;
